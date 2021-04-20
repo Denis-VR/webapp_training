@@ -1,8 +1,5 @@
-package only_java;
+package only_java.HandConfiguration;
 
-import org.springframework.stereotype.Component;
-
-@Component("popBean")
 public class PopMusic implements Music {
 	@Override
 	public String getSong() {

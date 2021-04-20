@@ -1,5 +1,7 @@
-package only_java;
+package only_java.HandConfiguration;
 
+import only_java.AutoConfig.MusicAutoPlayer;
+import only_java.AutoConfig.PopMusic;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -14,7 +16,12 @@ public class HandConfig {
 	}
 
 	@Bean
-	public MusicPlayer musicPlayer() {
-		return new MusicPlayer(popBean());
+	public RockMusic rockBean() {
+		return new RockMusic();
+	}
+
+	@Bean
+	public MusicHandPlayer musicHandPlayer() {
+		return new MusicHandPlayer(popBean());
 	}
 }

@@ -1,4 +1,4 @@
-package only_java;
+package only_java.AutoConfig;
 
 import org.springframework.stereotype.Component;
 

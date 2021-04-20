@@ -1,4 +1,4 @@
-package only_java;
+package only_java.AutoConfig;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Scope("singleton")
-public class MusicPlayer {
+public class MusicAutoPlayer {
 
 	//	@Autowired
 //	@Qualifier("classicBean")
@@ -19,15 +19,15 @@ public class MusicPlayer {
 	private int volume;
 
 	@Autowired
-	public MusicPlayer(@Qualifier("rockBean") Music music) {
+	public MusicAutoPlayer(@Qualifier("rockBean") Music music) {
 		this.music = music;
 	}
 
-	private MusicPlayer() {
+	private MusicAutoPlayer() {
 	}
 
-	public static MusicPlayer factoryMethod() {
-		return new MusicPlayer();
+	public static MusicAutoPlayer factoryMethod() {
+		return new MusicAutoPlayer();
 	}
 
 	public String getName() {
