@@ -1,8 +1,9 @@
-package only_xml.music_player;
+package only_xml.music_player.source;
 
 public class ClassicalMusic implements Music{
+
 	@Override
 	public String getSong() {
-		return "Hungarian Rhapsody";
+		return "Moonlight Sonata";
 	}
 }

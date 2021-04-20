@@ -4,7 +4,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="musicBean"
-          class="only_xml.music_player.ClassicalMusic">
+          class="only_xml.music_player.source.ClassicalMusic">
+    </bean>
+
+    <bean id="musicPlayer"
+          class="only_xml.music_player.source.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
     </bean>
 
 </beans>

@@ -1,4 +1,4 @@
-package only_xml.music_player;
+package only_xml.music_player.source;
 
 public class RockMusic implements Music{
 	@Override
