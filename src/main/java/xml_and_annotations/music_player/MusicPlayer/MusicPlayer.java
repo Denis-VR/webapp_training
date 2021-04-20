@@ -1,18 +1,23 @@
-package xml_and_annotations.music_player.source;
+package xml_and_annotations.music_player.MusicPlayer;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MusicPlayer {
 
-	@Autowired
+	//	@Autowired
+//	@Qualifier("classicBean")
 	private Music music;
+	@Value("Cool Player")
 	private String name;
+	@Value("${musicPlayer.volume}")
 	private int volume;
 
-//	@Autowired
-	public MusicPlayer(Music music) {
+	@Autowired
+	public MusicPlayer(@Qualifier("rockBean") Music music) {
 		this.music = music;
 	}
 
@@ -39,8 +44,9 @@ public class MusicPlayer {
 		this.volume = volume;
 	}
 
-	public void playMusic() {
+	public String playMusic() {
 		System.out.println("Playing: " + music.getSong());
+		return "Playing: " + music.getSong();
 	}
 
 	public void setMusic(Music music) {

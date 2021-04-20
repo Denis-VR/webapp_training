@@ -1,4 +1,4 @@
-package xml_and_annotations.music_player.source;
+package xml_and_annotations.music_player.MusicPlayer;
 
 public interface Music {
 	//init и destroy методы
