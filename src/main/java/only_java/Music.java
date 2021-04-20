@@ -1,4 +1,4 @@
-package xml_and_annotations.music_player.MusicPlayer;
+package only_java;
 
 import org.springframework.stereotype.Component;
 
