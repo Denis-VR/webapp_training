@@ -7,19 +7,19 @@
     <context:property-placeholder location="musicPlayer.properties"/>
 
     <bean id="Classical"
-          class="only_xml.music_player.source.ClassicalMusic">
+          class="configuration_train.only_xml.music_player.source.ClassicalMusic">
     </bean>
 
     <bean id="Rock"
-          class="only_xml.music_player.source.RockMusic">
+          class="configuration_train.only_xml.music_player.source.RockMusic">
     </bean>
 
     <bean id="Pop"
-          class="only_xml.music_player.source.PopMusic">
+          class="configuration_train.only_xml.music_player.source.PopMusic">
     </bean>
 
     <bean id="musicListPlayer"
-          class="only_xml.music_player.source.MusicListPlayer">
+          class="configuration_train.only_xml.music_player.source.MusicListPlayer">
         <property name="listMusic">
             <list>
                 <ref bean="Classical"/>

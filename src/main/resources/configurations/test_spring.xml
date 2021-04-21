@@ -5,7 +5,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="testBean"
-          class="only_xml.test_spring.TestBean">
+          class="configuration_train.only_xml.test_spring.TestBean">
         <constructor-arg value="MyName"/>
     </bean>
 
