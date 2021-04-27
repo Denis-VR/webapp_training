@@ -5,7 +5,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class TestConnect {
+import java.util.List;
+
+public class GetByHQL {
 	public static void main(String[] args) {
 		SessionFactory factory = new Configuration()
 				.configure("hibernate.cfg.xml")
@@ -13,9 +15,24 @@ public class TestConnect {
 				.buildSessionFactory();
 		try {
 			Session session = factory.getCurrentSession();
-			Employee emp = new Employee("Tim", "Polo", "IT", 500);
 			session.beginTransaction();
-			session.save(emp);
+
+//			List<Employee> emps = session.createQuery("from Employee")
+//					.getResultList();
+
+//			List<Employee> emps = session.createQuery("from Employee " +
+//					"where surname = 'Didi' AND salary > 3000")
+//					.getResultList();
+
+			List<Employee> emps = session.createQuery("from Employee " +
+					"where surname = 'Didi' AND salary > 3000")
+					.getResultList();
+
+			for (Employee employee :emps) {
+				System.out.println(employee);
+			}
+
+
 			session.getTransaction().commit();
 		} finally {
 			factory.close();
