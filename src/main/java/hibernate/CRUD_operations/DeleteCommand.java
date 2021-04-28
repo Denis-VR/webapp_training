@@ -1,11 +1,11 @@
-package hibernate;
+package hibernate.CRUD_operations;
 
-import hibernate.entity.Employee;
+import hibernate.CRUD_operations.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class GetById {
+public class DeleteCommand {
 	public static void main(String[] args) {
 		SessionFactory factory = new Configuration()
 				.configure("hibernate.cfg.xml")
@@ -13,14 +13,13 @@ public class GetById {
 				.buildSessionFactory();
 		try {
 			Session session = factory.getCurrentSession();
-			int myId = 3;
 			session.beginTransaction();
-			Employee employee = session.get(Employee.class, myId);
-			System.out.println(employee);
 
-			Employee emp = new Employee("Alex", "Bre", "Sales", 4500);
-			session.beginTransaction();
-			session.save(emp);
+//			Employee emp = session.get(Employee.class, 3);
+//			session.delete(emp);
+
+			session.createQuery("delete Employee where surname like 'Didi'").executeUpdate();
+
 			session.getTransaction().commit();
 		} finally {
 			factory.close();

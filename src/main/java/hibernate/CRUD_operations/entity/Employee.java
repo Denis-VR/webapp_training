@@ -1,4 +1,4 @@
-package hibernate.entity;
+package hibernate.CRUD_operations.entity;
 
 import javax.persistence.*;
 

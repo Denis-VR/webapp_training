@@ -1,6 +1,6 @@
-package hibernate;
+package hibernate.CRUD_operations;
 
-import hibernate.entity.Employee;
+import hibernate.CRUD_operations.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
