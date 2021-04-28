@@ -1,12 +1,12 @@
-package hibernate.associations;
+package hibernate.one_to_one;
 
-import hibernate.associations.entity.Detail;
-import hibernate.associations.entity.Employee2;
+import hibernate.one_to_one.entity.Detail;
+import hibernate.one_to_one.entity.Employee2;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class Bi_directional_test {
+public class Bi_directional {
 	public static void main(String[] args) {
 		SessionFactory factory = new Configuration()
 				.configure("hibernate.cfg.xml")
@@ -26,6 +26,8 @@ public class Bi_directional_test {
 //			session.save(detail2);
 
 			//step 2
+			Detail detail = session.get(Detail.class, 4);
+			System.out.println(detail.getEmployee2());
 
 		} finally {
 			session.getTransaction().commit();
