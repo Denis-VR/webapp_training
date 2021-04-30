@@ -1,5 +1,5 @@
 select 'Hello, world!'
-    from dual;
+from dual;
 
 Create table students
 (
@@ -11,19 +11,19 @@ Create table students
 );
 
 insert into students (id, name, last_name, course)
-    values ('1', 'Alex', 'Redux', '3');
+values ('1', 'Alex', 'Redux', '3');
 insert into students (id, name, last_name, course)
-    values ('2', 'Misha', 'Gen', '2');
+values ('2', 'Misha', 'Gen', '2');
 
 select *
-    from students;
+from students;
 
 select *
-    from employees;
+from employees;
 
 select surname
-    from employees
-    group by surname;
+from employees
+group by surname;
 
 CREATE TABLE employees
 (
@@ -36,7 +36,7 @@ CREATE TABLE employees
 );
 
 select *
-    from employees;
+from employees;
 
 CREATE TABLE details
 (
@@ -60,14 +60,14 @@ create table employees2
 );
 
 select *
-    from employees2;
+from employees2;
 select *
-    from details;
+from details;
 
 delete
-    from employees2
-    where salary = 4870
-      and details_id = 1;
+from employees2
+where salary = 4870
+  and details_id = 1;
 
 create table departments
 (
@@ -90,16 +90,44 @@ create table employees3
 );
 
 select *
-    from employees3;
+from employees3;
 select *
-    from departments;
+from departments;
 
 delete
-    from departments
-    where id = 2;
+from departments
+where id = 2;
 delete
-    from employees3
-    where department_id = 3;
+from employees3
+where department_id = 3;
 delete
-    from employees3
-    where id = 4;
+from employees3
+where id = 4;
+
+create table children
+(
+    id   int not null auto_increment,
+    name varchar(15),
+    age  int,
+    primary key (id)
+);
+
+create table section
+(
+    id   int not null auto_increment,
+    name varchar(15),
+    primary key (id)
+);
+
+create table child_section
+(
+    child_id   int not null,
+    section_id int not null,
+    primary key (child_id, section_id),
+    foreign key (child_id) references children (id),
+    foreign key (section_id) references section (id)
+);
+
+select * from section;
+select * from children;
+select * from child_section;
