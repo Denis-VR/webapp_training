@@ -7,14 +7,14 @@
     <context:property-placeholder location="musicPlayer.properties"/>
 
     <bean id="musicBean"
-          class="configuration_train.only_xml.music_player.source.ClassicalMusic"
+          class="dependency_injection.only_xml.music_player.source.ClassicalMusic"
           init-method="doMyInit"
           destroy-method="doMyDestroy">
         <!--        если указать scope="prototype", то destroy-method не будет вызываться-->
     </bean>
 
     <bean id="musicPlayer"
-          class="configuration_train.only_xml.music_player.source.MusicPlayer"
+          class="dependency_injection.only_xml.music_player.source.MusicPlayer"
           factory-method="factoryMethod">
         <property name="music" ref="musicBean"/>
         <property name="name" value="MyPlayer"/>
