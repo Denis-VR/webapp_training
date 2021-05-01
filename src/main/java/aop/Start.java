@@ -13,6 +13,6 @@ public class Start {
 //		otherLib.addBook("Alex", context.getBean("book", Book.class));
 		otherLib.addMagazine();
 
-
+		context.close();
 	}
 }
