@@ -32,7 +32,7 @@
 
     function validateForm() {
         var element = document.forms["myForm"]["employeeName"].value;
-        if (element == "") {
+        if (element === "") {
             alert("Имя должно быть");
             return false;
         }

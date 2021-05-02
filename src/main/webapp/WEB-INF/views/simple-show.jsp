@@ -5,6 +5,7 @@
     <title>Изучение Spring MVC</title>
 </head>
 <body>
-<h2>Dear ${param.employeeName}, you are welcome!</h2>
+<%--<h2>Dear ${param.employeeName}, you are welcome!</h2>--%>
+<h2>Your name: ${nameAttribute} ${description}</h2>
 </body>
 </html>
