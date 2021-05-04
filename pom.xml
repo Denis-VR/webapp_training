@@ -98,7 +98,7 @@
       <version>1.9.6</version>
     </dependency>
 
-      <!--логирование Spring:-->
+<!--      логирование Spring:-->
 <!--    <dependency>-->
 <!--      <groupId>org.slf4j</groupId>-->
 <!--      <artifactId>slf4j-log4j12</artifactId>-->
@@ -116,6 +116,18 @@
       <artifactId>servlet-api</artifactId>
       <version>2.5</version>
       <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>5.4.21.Final</version>
+    </dependency>
+
+<!--     https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>6.1.0.Final</version>
     </dependency>
 
 
