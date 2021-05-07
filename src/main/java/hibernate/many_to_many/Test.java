@@ -50,8 +50,8 @@ public class Test {
 //			System.out.println(child.getSections());
 
 			//step 5
-			Section section = session.get(Section.class, 4);
-			session.delete(section);
+//			Section section = session.get(Section.class, 4);
+//			session.delete(section);
 
 			System.out.println("Success!");
 			session.getTransaction().commit();

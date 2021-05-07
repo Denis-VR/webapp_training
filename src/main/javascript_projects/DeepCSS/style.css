@@ -1,0 +1,28 @@
+a {
+	color:rgb(255,0,0);
+	font-size: 30px;
+}
+div {
+	color:#08d8e2;
+}
+
+.human {
+	color:#147f0b;
+}
+.animal {
+	color:#a7a300;
+}
+.cat {
+	color:#454304;
+}
+
+#anyEl {
+	color:lime;
+}
+
+body {
+    /*margin: 0%;
+    overflow: hidden;
+    background: rgb(75, 75, 75);*/
+    background-image: url(imj2.jpg);
+}
