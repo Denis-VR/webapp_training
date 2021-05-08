@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -18,13 +19,14 @@ import java.util.Properties;
 @ComponentScan(basePackages = "rest")
 @EnableWebMvc
 @EnableTransactionManagement
+//@PropertySource("classpath:hibernate.properties")
 public class MyConfig {
-	@Value("${hibernate.url}")
-	private String url;
-	@Value("${hibernate.user}")
-	private String user;
-	@Value("${hibernate.root}")
-	private String password;
+//	@Value("${hibernate.url}")
+//	private String url;
+//	@Value("${hibernate.user}")
+//	private String user;
+//	@Value("${hibernate.root}")
+//	private String password;
 
 	@Bean
 	public DataSource dataSource()  {
@@ -34,9 +36,9 @@ public class MyConfig {
 		} catch (PropertyVetoException e) {
 			e.printStackTrace();
 		}
-		dataSource.setJdbcUrl(url);
-		dataSource.setUser(user);
-		dataSource.setPassword(password);
+		dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/training_db");
+		dataSource.setUser("root");
+		dataSource.setPassword("root");
 		return dataSource;
 	}
 

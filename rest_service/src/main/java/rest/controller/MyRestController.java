@@ -15,7 +15,7 @@ public class MyRestController {
 	@Autowired
 	private EmployeeService employeeService;
 
-	@GetMapping("/employees")
+	@GetMapping("/emp")
 	public List<Employee> showAllEmployees() {
 		List<Employee> allEmployees = employeeService.getAllEmployees();
 
