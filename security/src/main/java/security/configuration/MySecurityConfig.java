@@ -1,5 +1,6 @@
 package security.configuration;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -7,17 +8,26 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.User.UserBuilder;
 
+import javax.sql.DataSource;
+import javax.xml.crypto.Data;
+
 @EnableWebSecurity
 public class MySecurityConfig extends WebSecurityConfigurerAdapter {
+
+	@Autowired
+	DataSource dataSource;
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		UserBuilder userBuilder = User.withDefaultPasswordEncoder();
+		auth.jdbcAuthentication().dataSource(dataSource);
 
+
+//		UserBuilder userBuilder = User.withDefaultPasswordEncoder();
 		//сравниваем введенный пользователем User и Password с этим:
-		auth.inMemoryAuthentication()
-				.withUser(userBuilder.username("pasha").password("pasha").roles("EMPLOYEE"))
-				.withUser(userBuilder.username("gena").password("gena").roles("HR"))
-				.withUser(userBuilder.username("elena").password("elena").roles("HR", "MANAGER"));
+//		auth.inMemoryAuthentication()
+//				.withUser(userBuilder.username("pasha").password("pasha").roles("EMPLOYEE"))
+//				.withUser(userBuilder.username("gena").password("gena").roles("HR"))
+//				.withUser(userBuilder.username("elena").password("elena").roles("HR", "MANAGER"));
 	}
 
 	@Override
