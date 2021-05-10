@@ -4,6 +4,7 @@ password varchar(100),
 enabled tinyint(1),
 PRIMARY KEY (USERNAME)
 );
+
 select * from users;
 select * from authorities;
 
@@ -24,3 +25,13 @@ insert into AUTHORITIES (username, authority) VALUES
 ('oleg', 'ROLE_HR'),
 ('alex', 'ROLE_HR'),
 ('alex', 'ROLE_MANAGER');
+
+# update users set enabled = 0 where username = 'denis';
+
+select * from users;
+update users set password = '{bcrypt}$2y$07$UoW/4.ltKNwJ8q2M80ns2.C8gqtMMDDAXAFe/fpCxf4pfXhhU5HEG'
+    where username = 'denis';
+update users set password = '{bcrypt}$2y$07$bWLoeaGusnJu2.91DtsbPeFIaM6WKRiwt85Jywrxr/rMRRVpLcEDK'
+    where username = 'alex';
+update users set password = '{bcrypt}$2y$07$oGitgqM7uJFCq759DnHS7edJNCs6trWq/X70jhVmoaM3IW7tK4Dnm'
+    where username = 'oleg';

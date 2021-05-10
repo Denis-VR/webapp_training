@@ -21,7 +21,6 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.jdbcAuthentication().dataSource(dataSource);
 
-
 //		UserBuilder userBuilder = User.withDefaultPasswordEncoder();
 		//сравниваем введенный пользователем User и Password с этим:
 //		auth.inMemoryAuthentication()
