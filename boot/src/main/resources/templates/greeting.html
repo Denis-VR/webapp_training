@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://ww.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    <link rel="stylesheet" type="text/css" href="sytle.css">-->
+</head>
+<body>
+
+<h2 th:text="'Hello, ' + ${name} +'!'" />
+
+<div>
+    <h3>REST API</h3>
+    <a href="/api/employees"><button>All employees</button></a>
+</div>
+
+</body>
+</html>
